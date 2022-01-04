@@ -14,21 +14,27 @@ export async function getStaticProps() {
 
 const Home = ({ products }: InferGetStaticPropsType <typeof getStaticProps>) => {
 
+  const newData = Object.values(products)
+  console.log(newData)
+  console.log(products)
+  const newObject = { products }
+  console.log("********************")
+  console.log(newObject)
+  console.log("------------------------")
   
   return (
     <div>
       { JSON.stringify(products) }
       <div>
         {
-          products.map((p, index) => {
+          newData.map((p, index) => {
             return(
               <ol key={index}>
-                <li>{p.id}</li>
+                <li>{p.title}</li>
               </ol>
             )
           })
         }
-        
       </div>
     </div>
   )
