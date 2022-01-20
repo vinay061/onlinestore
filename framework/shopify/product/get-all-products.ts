@@ -13,7 +13,7 @@ const fetchApi = async ({ query }: FetchParams) => {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            query: getAllProductsQuery
+            query
         })
     })
 
