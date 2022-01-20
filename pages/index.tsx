@@ -21,7 +21,15 @@ const Home = ({ products }: InferGetStaticPropsType <typeof getStaticProps>) => 
   console.log("********************")
   console.log(newObject)
   console.log("------------------------")
-  
+  //This works
+  newData.forEach((val) => {
+    console.log(val.edges[0].node)
+    console.log(val.edges[1].node)
+    console.log(val.edges[2].node.title)
+  })
+
+
+
   return (
     <div>
       { JSON.stringify(products) }
@@ -36,6 +44,7 @@ const Home = ({ products }: InferGetStaticPropsType <typeof getStaticProps>) => 
           })
         }
       </div>
+
     </div>
   )
 }
